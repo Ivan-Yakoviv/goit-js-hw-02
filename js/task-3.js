@@ -1,14 +1,6 @@
 function checkForSpam(message) {
-    const inputMessage = message.toLowerCase();
-    // const hasSpam = inputMessage.includes("spam");
-    const hasSale = inputMessage.includes("sale");
-    if (inputMessage.includes("spam")) {
-        return true;
-    } else if (hasSale) {
-        return inputMessage.includes("sale");
-    } else {
-        return false;
-    }
+    const normMessage = message.toLowerCase();
+    return normMessage.includes("spam") || normMessage.includes("sale");
 }
 
 console.log(checkForSpam("Latest technology news")); // false
@@ -19,4 +11,4 @@ console.log(checkForSpam("Trust me, this is not a spam message")); // true
 console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
 
-// який з варіантів умови, та повернення кращий?
+// return normMessage.includes("spam") || normMessage.includes("sale"); - дуже мудро, дякую!
